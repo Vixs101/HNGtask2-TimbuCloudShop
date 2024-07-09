@@ -7,5 +7,14 @@
   body {
     @apply font-inter;
   }
+  .heroText {
+    line-height: 30px;
+  }
 }
 
+@media (min-width: 1024px) {
+  .lg\:br::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
