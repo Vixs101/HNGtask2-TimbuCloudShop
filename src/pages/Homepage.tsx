@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { LuPhone } from "react-icons/lu";
 import { FaRegEnvelope } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
@@ -8,8 +7,7 @@ import { productImage } from "../utils/utils";
 function Homepage() {
   return (
     <>
-      <Navbar />
-      {/* hero section */}
+     {/* hero section */}
       <section className="flex md:flex-row flex-col p-5 md:p-20 justify-between bg-primary text-white w-full items-center h-full gap-5 md:gap-6 lg:gap-0">
         <div className="flex flex-col items-center md:items-start text-center md:text-start lg:w-2/5 md:h-4/5 gap-5 w-full">
           <h1 className="md:heroText text-3xl md:lg:text-5xl font-semibold">
@@ -26,7 +24,7 @@ function Homepage() {
         <img
           src="/images/heroImage.png"
           alt="heroImage"
-          className="md:w-4/5 lg:w-auto"
+          className="md:w-1/2 lg:w-auto"
         />
       </section>
 
@@ -58,7 +56,7 @@ function Homepage() {
       </section>
 
       {/* footer */}
-      <section className="flex flex-col items-center p-5 md:px-20 md:pt-20 md:pb-5 bg-primary text-white text-center w-full gap-10 md:gap-16">
+      <footer className="flex flex-col items-center p-5 md:px-20 md:pt-20 md:pb-5 bg-primary text-white text-center w-full gap-10 md:gap-16">
         <div className="flex flex-col md:w-1/2 gap-4">
           <h1 className="text-3xl md:text-6xl font-semibold ">
             Timbu Cloud Shop
@@ -99,7 +97,7 @@ function Homepage() {
           </div>
         </div>
         <p>2024 Copyright All Rights Reserved</p>
-      </section>
+      </footer>
     </>
   );
 }
