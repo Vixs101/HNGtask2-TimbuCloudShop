@@ -1,9 +1,19 @@
 import React from "react";
 import { checkoutItems, products } from "../utils/utils";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { useNavigate } from "react-router";
 
 function Cart() {
+  const navigate = useNavigate();
+
+  const goToCheckout = () => {
+    navigate('checkout');
+  }
+
+  const goToHome = () => {
+    navigate('/');
+  }
+
   return (
     <>
       <section className="p-5 md:px-20 md:py-10 h-full w-full">
@@ -11,7 +21,7 @@ function Cart() {
           <h1 className="text-lg md:text-3xl font-semibold text-primary">
             Subtotal $1950
           </h1>
-          <button className="text-white bg-primary hover:bg-[#8c552f] flex items-center justify-center text-lg md:text-2xl font-semibold h-10 p-2 md:p-0 md:w-2/12  rounded-xl">
+          <button className="text-white bg-primary hover:bg-[#8c552f] flex items-center justify-center text-lg md:text-2xl font-semibold h-10 p-2 md:p-0 md:w-2/12  rounded-xl" onClick={goToCheckout}>
             Checkout
           </button>
         </div>
@@ -76,7 +86,7 @@ function Cart() {
           <p className="text-sm md:text-base text-gray-300">
             Home\<span className="text-black">Cart</span>\Checkout
           </p>{" "}
-          <button className="text-white bg-secondary hover:bg-tertiary flex items-center justify-center text-lg md:text-2xl font-semibold h-10 p-2 md:w-1/4 lg:w-2/12  rounded-xl">
+          <button className="text-white bg-secondary hover:bg-tertiary flex items-center justify-center text-lg md:text-2xl font-semibold h-10 p-2 md:w-1/4 lg:w-2/12  rounded-xl" onClick={goToHome}>
             Back to Home
           </button>
         </div>

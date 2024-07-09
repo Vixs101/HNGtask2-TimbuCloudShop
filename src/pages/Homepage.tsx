@@ -3,8 +3,15 @@ import { LuPhone } from "react-icons/lu";
 import { FaRegEnvelope } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { productImage } from "../utils/utils";
+import { useNavigate } from "react-router";
 
 function Homepage() {
+  const navigate = useNavigate();
+
+  const goToCart = () => {
+    navigate('cart');
+  };
+
   return (
     <>
      {/* hero section */}
@@ -46,7 +53,7 @@ function Homepage() {
                   <h3 className="text-primary">{product.title}</h3>
                   <p>{product.price}</p>
                 </div>
-                <button className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-2xl md:text-4xl rounded-xl md:p-2 w-1/5">
+                <button className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-2xl md:text-4xl rounded-xl md:p-2 w-1/5" onClick={goToCart}>
                   {product.button}
                 </button>
               </div>
