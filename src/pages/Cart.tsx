@@ -61,7 +61,7 @@ function Cart() {
           Best Selling Items
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 h-full my-5">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 h-full my-5">
           {products.map((product) => (
             <div
               key={product.id}
@@ -70,11 +70,11 @@ function Cart() {
               <img src={`/images/${product.pic}.png`} alt={product.alt} />
 
               <div className="flex justify-between border-t-gray-200 border-t pt-2">
-                <div className="flex flex-col gap-2 text-xl md:text-2xl">
+                <div className="flex flex-col gap-2 text-sm md:text-2xl">
                   <h3 className="text-primary">{product.title}</h3>
                   <p>{product.price}</p>
                 </div>
-                <button className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-2xl md:text-4xl rounded-xl md:p-2 w-1/5">
+                <button className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-2xl md:text-4xl rounded-xl md:p-2 h-10 md:h-auto w-1/4 md:w-1/5 self-center md:self-start">
                   {product.button}
                 </button>
               </div>

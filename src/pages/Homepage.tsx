@@ -40,20 +40,20 @@ function Homepage() {
         <h2 className="text-center md:text-start text-xl md:text-2xl font-semibold">
           Best Selling Items
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 h-full mt-5">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 h-full mt-5">
           {productImage.map((product) => (
             <div
               key={product.id}
-              className="flex flex-col bg-white p-5 rounded-xl gap-5"
+              className="flex flex-col bg-white p-2 md:p-5 rounded-xl gap-5"
             >
               <img src={`/images/${product.pic}.png`} alt={product.alt} />
 
               <div className="flex justify-between border-t-gray-200 border-t pt-2">
-                <div className="flex flex-col gap-2 text-xl md:text-2xl">
+                <div className="flex flex-col gap-2 text-sm md:text-2xl">
                   <h3 className="text-primary">{product.title}</h3>
                   <p>{product.price}</p>
                 </div>
-                <button className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-2xl md:text-4xl rounded-xl md:p-2 w-1/5" onClick={goToCart}>
+                <button className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-sm md:text-4xl rounded-xl md:p-2 h-10 md:h-auto w-1/4 md:w-1/5 self-center md:self-start" onClick={goToCart}>
                   {product.button}
                 </button>
               </div>
