@@ -11,8 +11,8 @@ function Checkout() {
   };
   return (
     <>
-      <section className="md:px-20 lg:px-52">
-        <div className="bg-primary p-5 md:p-10">
+      <section className="pt-12 md:px-20 lg:px-52">
+        <div className="bg-primary px-5 pb-5 md:p-10">
           <div className="flex flex-col gap-2 text-white">
             <h1 className="text-lg md:text-2xl font-semibold ">
               Payment Details

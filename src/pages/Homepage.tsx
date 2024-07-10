@@ -15,7 +15,7 @@ function Homepage() {
   return (
     <>
      {/* hero section */}
-      <section className="flex md:flex-row flex-col p-5 md:p-20 justify-between bg-primary text-white w-full items-center h-full gap-5 md:gap-6 lg:gap-0">
+      <section className="flex md:flex-row flex-col px-5 pb-5 pt-14 md:px-20 md:pt-28 md:pb-20 justify-between bg-primary text-white w-full items-center h-full gap-5 md:gap-6 lg:gap-0">
         <div className="flex flex-col items-center md:items-start text-center md:text-start lg:w-2/5 md:h-4/5 gap-5 w-full">
           <h1 className="md:heroText text-3xl md:lg:text-5xl font-semibold">
             Flash sales on all <span className="lg:br"></span> Sofa Series
