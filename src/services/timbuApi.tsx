@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { CgOrganisation } from 'react-icons/cg';
 declare global {
     interface ImportMeta {
       env: {
