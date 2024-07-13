@@ -31,11 +31,7 @@ function Homepage() {
         const response = await getProducts(page, 12);
         setProducts(response.data.items);
 
-        console.log(response.data.items);
-
         setTotalPages(Math.ceil(response.data.total / 10));
-
-        console.log(response.data.total / 10);
       } catch (error) {
         console.log("Error fetching products: ", error);
       }
@@ -44,6 +40,7 @@ function Homepage() {
     fetchProducts();
   }, [page]);
 
+  
   return (
     <>
       {/* hero section */}
@@ -91,7 +88,7 @@ function Homepage() {
                   <p>{`$${product.current_price[0].NGN[0]}`}</p>
                 </div>
                 <button
-                  className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-sm md:text-4xl rounded-xl md:p-2 h-10 md:h-auto w-1/4 md:w-1/5 self-center md:self-start"
+                  className="flex items-center justify-center bg-primary hover:bg-[#8c552f] text-white text-sm md:text-4xl rounded-xl md:p-2 h-10 md:h-auto w-1/4 md:w-1/6 self-center md:self-start"
                   onClick={goToCart}
                 >
                   <MdOutlineShoppingCart />
@@ -120,7 +117,7 @@ function Homepage() {
 
       {/* footer */}
       <footer className="flex flex-col items-center p-5 md:px-20 md:pt-20 md:pb-5 bg-primary text-white text-center w-full gap-10 md:gap-16">
-        <div className="flex flex-col md:w-1/2 gap-4">
+        <div className="flex flex-col md:w-1/2 gap-4"> 
           <h1 className="text-3xl md:text-6xl font-semibold ">
             Timbu Cloud Shop
           </h1>
@@ -150,7 +147,7 @@ function Homepage() {
               <p>Immalex02@gmail.com</p>
             </span>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 items-center">
             <span className="bg-[#D9D9D9] p-4 rounded-full">
               <IoMdHome className="text-black text-lg" />
             </span>
