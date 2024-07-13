@@ -55,8 +55,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
               key={index}
               src={`https://api.timbu.cloud/images/${photo.url}`}
               alt={product.name}
-              className={`my-4 w-full object-cover rounded-xl transition-opacity duration-300 ${index === currentImageIndex ? '' : 'hidden'}`}
-              style={{ height: "300px", width: "300px" }}
+              className={`my-4 h-72 w-72 object-cover rounded-xl transition-opacity duration-300 ${index === currentImageIndex ? '' : 'hidden'}`}
             />
           ))}
         </div>
