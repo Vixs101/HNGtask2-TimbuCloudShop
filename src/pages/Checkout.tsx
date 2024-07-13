@@ -1,13 +1,30 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/cartContext";
 
 function Checkout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { subtotal } = location.state;
   const [paymentMethod, setPaymentMethod] = useState("credit_card");
   const [email, setEmail] = useState("");
   const [cardExpiry, setCardExpiry] = useState("");
   const [cardCvv, setCardCvv] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const {clearCart} = useCart();
 
   const handleChange = (event) => {
     setPaymentMethod(event.target.value);
+  };
+
+  const handlePayment = () => {
+    setShowModal(true);
+  };
+
+  const handleBackToHome = () => {
+    clearCart(); 
+    navigate("/");
   };
   return (
     <>
@@ -103,7 +120,7 @@ function Checkout() {
         <div className="flex flex-col gap-2 my-5 px-5 md:px-0">
           <div className="flex justify-between">
             {" "}
-            <h4 className="text-gray-600">Sub Total</h4> <p>$650</p>
+            <h4 className="text-gray-600">Sub Total</h4> <p>${subtotal}</p>
           </div>
           <div className="flex justify-between">
             {" "}
@@ -111,14 +128,30 @@ function Checkout() {
           </div>
           <div className="flex justify-between">
             {" "}
-            <h4>Total</h4> <p>$650</p>
+            <h4>Total</h4> <p>{subtotal}</p>
           </div>
-          <button className="text-white bg-secondary hover:bg-tertiary flex items-center justify-center text-lg md:text-2xl font-semibold h-10 p-2">
+          <button
+            className="text-white bg-secondary hover:bg-tertiary flex items-center justify-center text-lg md:text-2xl font-semibold h-10 p-2"
+            onClick={handlePayment}
+          >
             Make Payment
           </button>
         </div>
-        
       </section>
+      {/* Payment Success Modal */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="flex flex-col gap-2 bg-white p-5 md:p-10 rounded-xl text-center">
+            <h2 className="text-2xl font-semibold mb-4">Payment Successful!</h2>
+            <button
+              className="flex items-center justify-center text-white bg-primary hover:bg-[#8c552f] text-lg md:text-2xl font-semibold h-10 p-2 rounded-lg"
+              onClick={handleBackToHome}
+            >
+              Back to Home
+            </button>
+          </div>
+        </div>
+      )}
       <footer className="md:absolute lg:relative bottom-0 w-full flex bg-secondary text-white font-semibold justify-center px-5 md:px-20 py-3 md:mt-3">
         <h1 className="flex cursor-pointer self-center">
           {" "}

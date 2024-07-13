@@ -1,8 +1,11 @@
 import React from "react";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useNavigate } from "react-router";
+import { useCart } from "../context/cartContext";
 
 function Navbar() {
+  const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const navigate = useNavigate();
 
   const goToCart = () => {
@@ -17,9 +20,12 @@ function Navbar() {
       <h1 className="cursor-pointer" onClick={goToHome}> Timbu Cloud Shop</h1>
       <div className="flex items-center gap-2 cursor-pointer hover:text-primary" onClick={goToCart}>
         <h2 className="hidden md:block">
-          Cart(<span>0</span>)
+          Cart({totalItems})
         </h2>
         <MdOutlineShoppingCart className="text-2xl md:text-xl"/>
+        <h2 className="md:hidden">
+          ({totalItems})
+        </h2>
       </div>
     </nav>
   );
