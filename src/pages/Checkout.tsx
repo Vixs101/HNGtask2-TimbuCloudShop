@@ -140,7 +140,7 @@ function Checkout() {
       </section>
       {/* Payment Success Modal */}
       {showModal && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="flex flex-col gap-2 bg-white p-5 md:p-10 rounded-xl text-center">
             <h2 className="text-2xl font-semibold mb-4">Payment Successful!</h2>
             <button

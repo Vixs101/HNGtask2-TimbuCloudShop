@@ -27,17 +27,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-lg p-8 max-w-md mx-auto"
+        className="relative bg-white rounded-lg p-8 w-full md:w-1/3 lg:w-1/4 mx-auto "
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-2 right-2 text-black text-3xl font-bold"
+          className="absolute top-2 right-5 text-black text-2xl font-bold"
           onClick={onClose}
         >
           X
         </button>
         <h2 className="text-xl font-semibold text-primary">{product.name}</h2>
-        <div className="relative">
+        <div className="relative w-full">
           <button
             className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
             onClick={toggleImage}
@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, product }) => {
               key={index}
               src={`https://api.timbu.cloud/images/${photo.url}`}
               alt={product.name}
-              className={`my-4 h-72 w-72 object-cover rounded-xl transition-opacity duration-300 ${index === currentImageIndex ? '' : 'hidden'}`}
+              className={`my-4 h-72 w-full object-cover rounded-xl transition-opacity duration-300 ${index === currentImageIndex ? '' : 'hidden'}`}
             />
           ))}
         </div>

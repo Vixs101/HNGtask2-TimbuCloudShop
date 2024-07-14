@@ -6,7 +6,7 @@ export interface Product {
   name: string;
   current_price: number;
   description: string;
-  photos: any;
+  photos: { url: string }[];
 }
 
 

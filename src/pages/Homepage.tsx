@@ -5,7 +5,6 @@ import { LuPhone } from "react-icons/lu";
 import { FaRegEnvelope } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { Product } from "../utils/utils";
-import { useNavigate } from "react-router";
 import Modal from "../components/Modal";
 import { MdOutlineShoppingCart } from "react-icons/md";
 
@@ -16,7 +15,6 @@ function Homepage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const { addToCart } = useCart();
 
-  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -25,7 +23,7 @@ function Homepage() {
         
         const response = await getProducts(page, 12);
         setProducts(response.data.items);
-        console.log(response.data.items)
+
         setTotalPages(Math.ceil(response.data.total / 10));
       } catch (error) {
         console.log("Error fetching products: ", error);
@@ -38,7 +36,6 @@ function Homepage() {
 
   const openModal = (product: Product) => {
     setSelectedProduct(product);
-    console.log("modal opened")
   };
 
   const closeModal = () => {
